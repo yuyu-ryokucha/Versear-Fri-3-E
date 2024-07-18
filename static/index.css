@@ -1,0 +1,283 @@
+
+/* =============================================
+CSS変数 よく使う色を定義 これで color:red; の変わりに color:var(----color_accent); のように使える
+============================================= */
+
+:root {
+  --color_background: rgb(235 242 255);
+  --color_background_sub: rgb(235 242 255);
+  --color_accent: rgb(171, 75, 8);
+  --color_accent_sub: rgb(107, 200, 232);
+}
+
+
+
+@font-face {
+  font-family: "Custom";
+  src: url(/static/font/Poppins-Regular.woff2) format(woff2);
+  font-weight: normal;
+}
+
+body {
+  font-family: "Custom", Arial, "BIZ UDGothic", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  background-color: #e9e5de;
+  color: #000;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0;
+    min-width: 0
+}
+
+body {
+  background-image:
+      radial-gradient(290px 300px , rgba(66, 61, 61, 0.5) 20%, transparent 20.1%),
+      radial-gradient(800px 780px , rgba(115, 84, 53, 0.5) 20%, transparent 20.1%),
+      radial-gradient(1000px 990px , rgba(46, 45, 44, 0.5) 20%, transparent 20.1%),
+      radial-gradient(400px 380px , rgba(222, 149, 123, 0.5) 20%, transparent 20.1%),
+      radial-gradient(750px 750px , rgba(51, 28, 15, 0.5) 20%, transparent 20.1%),
+      radial-gradient(100px 100px , rgba(222, 181, 123, 0.5) 20%, transparent 20.1%);
+  background-size: 
+      1230px 1280px,
+      810px 910px,
+      1470px 990px,
+      1200px 1700px,
+      1520px 1200px,
+      1100px 1300px;
+  background-position: 
+      -300px -750px,
+      -360px 100px,
+      50px 510px,
+      -280px -550px,
+      -230px -250px,
+      130px -150px;
+}
+
+header {
+  background-image: url(/static/img/twitter_240418_desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  .header_inner {
+    background-color: rgba(67, 67, 67, 50%);
+    background-image: radial-gradient(rgba(0, 0, 0, 50%) 12%, transparent 12%), radial-gradient(rgba(0, 0, 0, 50%) 12%, transparent 12%);
+    background-size: 6px 6px;
+    background-position: 0 0, 3px 3px;
+    h1 {
+      margin: 0 auto;
+      padding: 1rem;
+    }
+  }
+
+}
+
+
+
+
+section {
+  border-radius: 8px;
+
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+
+
+
+
+
+
+
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  transition: ease-in-out 0.5s;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 0.25rem;
+}
+
+nav a:hover {
+  background-color: #999;
+}
+
+
+
+footer {
+  background-color: #6c504e;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+    margin-top: 1.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+ul,ol {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+
+    & > li {
+        margin: .4rem 0
+    }
+    ul, ol {
+        margin: .2rem 0
+    }
+}
+ul {
+    padding-left: 1.8rem;
+    & > li {
+        list-style: disc;
+
+        &::marker {
+            font-size: 1rem;
+            color: var(--color_accent);
+            font-weight: bold;
+        }
+    }
+}
+ol {
+    padding-left: 1.8rem;
+    & > li {
+        list-style: decimal;
+        padding-left: .2rem;
+
+        &::marker {
+            color: var(--color_accent);
+            font-weight: bold;
+            letter-spacing: -.05em
+        }
+    }
+}
+
+
+
+/* =============================================
+時系列のタイムライン用
+============================================= */
+
+.timeline {
+  position: relative;
+}
+
+/* アイテム */
+.timeline-item {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item_after-long-term {
+  margin-bottom: 4rem;
+}
+
+.timeline-marker {
+  flex: 0 0 2rem;
+  position: relative;
+}
+
+/* 点 */
+.timeline-marker::before {
+  content: '';
+  position: absolute;
+  top: 0.667rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #a36437;
+  border-radius: 50%;
+}
+
+/* 線 */
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% + 2rem);
+  background-color: #a36437;
+}
+
+/* 長期間 */
+.timeline-item_after-long-term .timeline-marker::after {
+  height: calc(100% + 4rem);
+}
+
+/* 最古 */
+.timeline-item:last-child .timeline-marker::after {
+  display: none;
+}
+
+.timeline time {
+  font-weight: bold;
+  color: #a36437;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  padding-left: 0.5rem;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  margin: 0;
+}
