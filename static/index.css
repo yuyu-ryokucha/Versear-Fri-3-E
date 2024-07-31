@@ -23,7 +23,7 @@ body {
   line-height: 1.8;
   margin: 0;
   padding: 0;
-  background-color: #e9e5de;
+  background-color: #f0f0f0;
   color: #000;
 }
 
@@ -44,6 +44,14 @@ body {
       radial-gradient(400px 380px , rgba(222, 149, 123, 0.197) 20%, transparent 20.1%),
       radial-gradient(750px 750px , rgba(51, 28, 15, 0.303) 20%, transparent 20.1%),
       radial-gradient(100px 100px , rgba(222, 181, 123, 0.349) 20%, transparent 20.1%);
+  background-image: 
+  radial-gradient(290px 300px, rgb(107 137 145 / 50%) 20%, transparent 20.1%),
+  radial-gradient(800px 780px, rgb(107 137 145 / 50%) 20%, transparent 20.1%),
+  radial-gradient(1000px 990px, rgba(77, 101, 107, 0.5) 20%, transparent 20.1%),
+  radial-gradient(400px 380px, rgb(183 126 167 / 50%) 20%, transparent 20.1%),
+  radial-gradient(750px 750px, rgba(69, 71, 69, 0.5) 20%, transparent 20.1%),
+  radial-gradient(100px 100px, rgb(183 126 167 / 50%) 20%, transparent 20.1%)
+  ;
   background-size: 
       1230px 1280px,
       810px 910px,
@@ -106,7 +114,7 @@ nav {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #2c2b2b;
+  background-color: #374a50;
 }
 
 nav a {
